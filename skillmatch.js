@@ -94,7 +94,19 @@ function carregarVagas() {
   });
 }
 
+
 function calcularCompatibilidade(perfil, vaga) {
+  if (
+    !perfil ||
+    !Array.isArray(perfil.habilidades) ||
+    !vaga ||
+    !Array.isArray(vaga.requisitos)
+  ) {
+    throw new Error(
+      "Perfil ou vaga inválidos para calcular a compatibilidade."
+    );
+  }
+
   if (vaga.requisitos.length === 0) {
     return 0;
   }
@@ -103,8 +115,11 @@ function calcularCompatibilidade(perfil, vaga) {
     perfil.habilidades.includes(requisito)
   );
 
-  return Math.round((habilidadesPossuidas.length / vaga.requisitos.length) * 100);
+  return Math.round(
+    (habilidadesPossuidas.length / vaga.requisitos.length) * 100
+  );
 }
+
 
 function classificarCompatibilidade(percentual) {
   if (percentual >= 80) {
