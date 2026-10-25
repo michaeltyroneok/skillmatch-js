@@ -215,15 +215,31 @@ function exibirRelatorio(perfil, analises) {
 }
 
 
+
 async function iniciarSkillMatch() {
   try {
     console.log("Carregando vagas simuladas...");
+
     const vagas = await carregarVagas();
-    const analises = processarVagas(vagas, (vaga) => analisarVaga(candidato, vaga));
+
+    if (vagas.length === 0) {
+      console.log("Nenhuma vaga disponível para análise.");
+      return;
+    }
+
+    const analises = processarVagas(
+      vagas,
+      (vaga) => analisarVaga(candidato, vaga)
+    );
+
     exibirRelatorio(candidato, analises);
   } catch (erro) {
-    console.error("Ocorreu um erro ao iniciar o SkillMatch:", erro.message);
+    console.error(
+      "Ocorreu um erro ao iniciar o SkillMatch:",
+      erro.message
+    );
   }
 }
 
 iniciarSkillMatch();
+
