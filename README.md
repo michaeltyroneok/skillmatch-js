@@ -84,3 +84,13 @@ skillmatch-js/
 
 
 
+## Limitações e melhorias futuras
+
+Atualmente, o SkillMatch JS é um projeto educacional executado no terminal, com perfil e vagas definidos diretamente no código.
+
+Possíveis evoluções do projeto:
+- Permitir o cadastro de diferentes perfis profissionais.
+- Buscar vagas a partir de uma fonte de dados externa.
+- Melhorar a comparação entre habilidades equivalentes.
+- Criar uma interface visual para apresentar os resultados.
+- Implementar testes automatizados para validar os cálculos de compatibilidade.
