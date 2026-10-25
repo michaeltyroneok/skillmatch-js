@@ -183,6 +183,7 @@ function exibirRelatorio(perfil, analises) {
   console.log("SKILLMATCH JS — RELATÓRIO DE COMPATIBILIDADE");
   console.log("========================================");
   console.log(`Candidato: ${perfil.nome}`);
+  console.log(`Total de vagas analisadas: ${analises.length}`);
   console.log(`Área de interesse: ${perfil.areaInteresse}`);
   console.log(`Experiência: ${perfil.experiencia}`);
   console.log(`Disponível para oportunidades: ${perfil.disponivelParaTrabalho ? "Sim" : "Não"}`);
